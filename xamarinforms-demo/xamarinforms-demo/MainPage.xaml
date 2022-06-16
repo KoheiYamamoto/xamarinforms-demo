@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="xamarinforms_demo.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="このエリアで人気なキーワード：" HorizontalOptions="Center" TextColor="Black"/>
+            <Label Text="N/A" x:Name="Trend" HorizontalOptions="Center" TextColor="Black"/>
+        </StackLayout>
+
+        <maps:Map x:Name="map" />
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="現在地周辺で探す"  HorizontalOptions="Center" Clicked="CurrentLocationButton_Clicked"/>
+            <StackLayout Orientation="Vertical">
+                <Label Text="現在地：" HorizontalOptions="Start" TextColor="Black"/>
+                <Label x:Name="GPSlabel" HorizontalOptions="Start" TextColor="Black"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="entry" Placeholder="場所を入力"  HorizontalOptions="FillAndExpand" PlaceholderColor="Olive" />
+            <Entry x:Name="keyphrase" Placeholder="キーワードを入力"  HorizontalOptions="FillAndExpand" PlaceholderColor="Olive" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="場所とキーワードから検索"  HorizontalOptions="FillAndExpand" Clicked="SearchLocationButton_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
